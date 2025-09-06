@@ -70,8 +70,8 @@ npm run dev
 
 ### Регистрация
 
-````json
-POST /auth/register
+```json
+$ POST /auth/register
 {
   "name": "Иван",
   "surname": "Иванов",
@@ -80,16 +80,17 @@ POST /auth/register
   "email": "ivanov@gmail.com",
   "password": "Qwerty123456"
 }
+```
 
 ### Авторизация
 
 ```json
-POST /auth/login
+$ POST /auth/login
 {
   "email": "ivanov@gmail.com",
   "password": "Qwerty123456"
 }
-````
+```
 
 Для тестирования работы с пользователями (получение одного/всех, бан пользователя) нужно зарегистрировать или войти с помощью инструкций по входу/регистрации, скопировать полученный токен, зайти в один из эндпоинтов папки users и в поле Authorization выбрать Auth Type - `Bearer token` и вставить скопированный токен в появившееся справа окошко.
 
