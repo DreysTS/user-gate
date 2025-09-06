@@ -70,8 +70,8 @@ npm run dev
 
 ### Регистрация
 
+`POST /auth/register`
 ```json
-$ POST /auth/register
 {
   "name": "Иван",
   "surname": "Иванов",
@@ -84,8 +84,8 @@ $ POST /auth/register
 
 ### Авторизация
 
+`POST /auth/login`
 ```json
-$ POST /auth/login
 {
   "email": "ivanov@gmail.com",
   "password": "Qwerty123456"
