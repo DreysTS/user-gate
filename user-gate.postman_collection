@@ -1,0 +1,178 @@
+{
+	"info": {
+		"_postman_id": "35bf407d-71bb-4ba3-9119-7d08c3a249ff",
+		"name": "User Gate",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "46655861",
+		"_collection_link": "https://timofeygur.postman.co/workspace/TImofey-Gur's-Workspace~dae56240-13cb-43ef-8587-2eed898a8cad/collection/46655861-35bf407d-71bb-4ba3-9119-7d08c3a249ff?action=share&source=collection_link&creator=46655861"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Иван\",\r\n    \"surname\": \"Иванов\",\r\n    \"patronymic\": \"Иванович\",\r\n    \"dateOfBirth\": \"2005-09-26\",\r\n    \"email\": \"ivanov1@gmail.com\",\r\n    \"password\": \"Qwerty123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/auth/register",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"ivanov1@gmail.com\",\r\n    \"password\": \"Qwerty123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/auth/login",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "All users",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMzYjM1MTc5LTFjNTgtNDFhZS1hNzgzLTg0MGZkODk1YTc4NiIsIm5hbWUiOiLQmNCy0LDQvSIsInN1cm5hbWUiOiLQmNCy0LDQvdC-0LIiLCJwYXRyb255bWljIjoi0JjQstCw0L3QvtCy0LjRhyIsImRhdGVPZkJpcnRoIjoiMjAwNS0wOS0yNlQwMDowMDowMC4wMDBaIiwiZW1haWwiOiJpdmFub3YxQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJEtIQW1kYy5qa004YXBOdlJ0TW9idC5Bc09TMDBPcktVSmRBNUhaUVhWL0d2enBGOXB4OE1LIiwicm9sZSI6IkFETUlOIiwic3RhdHVzIjoiQUNUSVZFIiwiaWF0IjoxNzU3MTczNzAxLCJleHAiOjE3NTcxNzczMDF9.2D6yhlOE5_FoksGs7Ttg5gr9DIfqzvkMuzepS9Xn9sU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Иван\",\r\n    \"surname\": \"Иванов\",\r\n    \"patronymic\": \"Иванович\",\r\n    \"dateOfBirth\": \"2005-09-26\",\r\n    \"email\": \"ivanov@gmail.com\",\r\n    \"password\": \"Qwerty123456\"\r\n}"
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/users",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMzYjM1MTc5LTFjNTgtNDFhZS1hNzgzLTg0MGZkODk1YTc4NiIsIm5hbWUiOiLQmNCy0LDQvSIsInN1cm5hbWUiOiLQmNCy0LDQvdC-0LIiLCJwYXRyb255bWljIjoi0JjQstCw0L3QvtCy0LjRhyIsImRhdGVPZkJpcnRoIjoiMjAwNS0wOS0yNlQwMDowMDowMC4wMDBaIiwiZW1haWwiOiJpdmFub3YxQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJEtIQW1kYy5qa004YXBOdlJ0TW9idC5Bc09TMDBPcktVSmRBNUhaUVhWL0d2enBGOXB4OE1LIiwicm9sZSI6IlVTRVIiLCJzdGF0dXMiOiJBQ1RJVkUiLCJpYXQiOjE3NTcxNzM2MDEsImV4cCI6MTc1NzE3NzIwMX0.UjTDasEGl4SmubB811XNHy_DGl67nMTs7qSQvOeCGD0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/users/:id",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "72737b45-cfa0-401e-94c3-483490775905"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Block user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMzYjM1MTc5LTFjNTgtNDFhZS1hNzgzLTg0MGZkODk1YTc4NiIsIm5hbWUiOiLQmNCy0LDQvSIsInN1cm5hbWUiOiLQmNCy0LDQvdC-0LIiLCJwYXRyb255bWljIjoi0JjQstCw0L3QvtCy0LjRhyIsImRhdGVPZkJpcnRoIjoiMjAwNS0wOS0yNlQwMDowMDowMC4wMDBaIiwiZW1haWwiOiJpdmFub3YxQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJEtIQW1kYy5qa004YXBOdlJ0TW9idC5Bc09TMDBPcktVSmRBNUhaUVhWL0d2enBGOXB4OE1LIiwicm9sZSI6IlVTRVIiLCJzdGF0dXMiOiJBQ1RJVkUiLCJpYXQiOjE3NTcxNzM2MDEsImV4cCI6MTc1NzE3NzIwMX0.UjTDasEGl4SmubB811XNHy_DGl67nMTs7qSQvOeCGD0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/users/:id/block",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users",
+								":id",
+								"block"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "72737b45-cfa0-401e-94c3-483490775905"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
